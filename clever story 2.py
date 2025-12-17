@@ -10,6 +10,7 @@ exclamation = input("exclamation: ").capitalize().lower()
  
 verb2 = input("verb2: ").lower()
 verb3 = input("verb3: ").lower()
+
 # Additional inputs for an extended story
 place = input("place: ").lower()
 emotion = input("emotion: ").lower()
@@ -18,7 +19,7 @@ if animal != "zebra".lower() :
     print ('invalid animal')
 else :""    
 
-print("Your story is: \n")
+print("\nYour story is: \n".upper())
 print(f"The other day, I was really  trouble. It all started when I saw a very "
 	  f" {adjective} {animal} {verb1} down the {place}. {exclamation}! I yelled. But all "
 	  f"I could think to do was to {verb2} over and over. {emotion}, "

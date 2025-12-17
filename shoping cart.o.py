@@ -15,8 +15,8 @@ while True:
     action = input("What is your choice?: ")
 
     if action == "1":
-        new_item = input("what item would you you like to add?:")
-        item_price = float(input(f" What is the price of {new_item}?: $"))
+        new_item = input("what item would you you like to add?: ")
+        item_price = float(input(f" What is the price of ${new_item}?: $"))
     
         items.append(new_item) 
         prices.append(item_price)

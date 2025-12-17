@@ -39,7 +39,7 @@ def calculate_monthly_totals(transactions):
     totals = {}
 
     for t in transactions:
-        date = datetime.datetime.strptime(t["Date"], "%Y-%m-%d")
+        date = datetime.datetime.strptime(t["Date"], "%Y-%m-%d ")
 
         month_key = f"{date.year}-{date.month:02d}"
 

@@ -49,12 +49,11 @@ with open("life-expectancy.csv") as file:
                     highest_choice = lifexp
                     highest_choice_year = year
                     highest_choice_country = country
-print()
-print(f"The overall Max Life Expectancy is: { highest} from {highest_country} in { highest_year}")
+
+print(f"\nThe overall Max Life Expectancy is: { highest} from {highest_country} in { highest_year}")
 print(f"The overall Min Life Expectancy is: {lowest} from { lowest_country} in { lowest_year}")
 
-print()
-print(f"For the year {choice_year}:")
+print(f"\nFor the year {choice_year}:")
 print(f"The average life expectancy across all countries was: {average/count:.2f}")
 print(f"The Max life expectancy was in {highest_choice_country} with  {highest_choice}")
 print(f"The Min life expectancy was in {lowest_choice_country} with {lowest_choice}")

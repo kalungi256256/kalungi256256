@@ -1,4 +1,4 @@
-'''# Meal Price Calculator
+# Meal Price Calculator
 
 # Ask for the price of a child's meal
 child_meal_price = float(input("What is the price of a child's meal? "))
@@ -32,7 +32,7 @@ payment_amount = float(input("What is the payment amount? "))
 
 # Calculate change
 change = payment_amount - total
-print("Change: ${:.2f}".format(change))'''
+print("Change: ${:.2f}".format(change))
 
 def child_meal(child_num, child_meal_price):
     total = child_num * child_meal_price
@@ -57,7 +57,7 @@ def main():
     total_sub = sub_total(child_total,adult_total)
     print(f"${total_sub:.2f}")
     
+if __name__"__main__:
 
-main()
 
 

@@ -13,7 +13,7 @@ print(
     " The wreckage burns around you, and strange movements in the shadows....!\n"
 )
 
-print(f"\n welcome to Alien Planet Adventure\n".upper())
+print(f"\n🔥 welcome to Alien Planet Adventure🔥\n".upper())
 print(" Your ship has crushed on an alien planet")
 print ("Your the only survivor left on the ship.")
 print ("Find the possible way out of the ship before Aliens finds you and get destroyed\n")

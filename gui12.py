@@ -6,15 +6,15 @@ from number_entry import FloatEntry
 def main():
     # Create the main window
     root = tk.Tk()
-    root.title("Simple Calculator")
-    root.geometry("400x300")
+    root.title(" KAL Simple Calculator")
+    root.geometry("700x700")
     
     # Create and pack the main frame
     main_frame = ttk.Frame(root)
     main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
     
     # Title label
-    title_label = ttk.Label(main_frame, text="Simple Calculator", 
+    title_label = ttk.Label(main_frame, text="Kal Simple Calculator", 
                            font=("Arial", 16, "bold"))
     title_label.pack(pady=(0, 20))
     
