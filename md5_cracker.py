@@ -18,7 +18,7 @@ def usage():
     print("\nUSAGE:")
     print("\tpython crackmd5hash.py md5hash wordlistpath")
     print("EXAMPLE\n\tPython crackmd5hash.py ab334feeb31c05124cb73fa12571c2f6 /home/worldist.txt\n")
-    print("\tPython crackmd5hash.py ab334feeb31c05124cb73fa12571c2f6 D:\\myfiles\welcome.txt\n")
+    print("\tPython crackmd5hash.py ab334feeb31c05124cb73fa12571c2f6 D:\\myfiles\\welcome.txt\n")
     sys.exit(0)
 
 def args():
