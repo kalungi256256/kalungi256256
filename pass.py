@@ -309,7 +309,7 @@ class NetworkMonitor:
         
         if not interfaces:
             self.log_error("No Wi-Fi interfaces found! Connect a wireless adapter")
-            sys.exit([1])
+            sys.exit(1)
         
         # Prioritize interfaces with active connections
         connected_interfaces = [i for i in interfaces if i.status() == const.IFACE_CONNECTED]
@@ -354,32 +354,32 @@ class NetworkMonitor:
         return None
 
     def get_security(self, profile) -> str:
-    
-    # Handle case where profile.akm might be None
+        """Determine security type from WiFi profile"""
+        # Handle case where profile.akm might be None
         if not hasattr(profile, 'akm') or profile.akm is None:
             return "UNKNOWN"
         
         # Check if akm is empty or not a list
         if not isinstance(profile.akm, list) or len(profile.akm) == 0:
             return "OPEN"
-    
-    # Safely check for each security type without causing errors
-    security_types = {
-        "WPA3-PSK": lambda: hasattr(const, 'AKM_TYPE_WPA3PSK') and const.AKM_TYPE_WPA3PSK in profile.akm,
-        "WPA2-PSK": lambda: hasattr(const, 'AKM_TYPE_WPA2PSK') and const.AKM_TYPE_WPA2PSK in profile.akm,
-        "WPA-PSK": lambda: hasattr(const, 'AKM_TYPE_WPAPSK') and const.AKM_TYPE_WPAPSK in profile.akm,
-        "OPEN": lambda: hasattr(const, 'AKM_TYPE_NONE') and const.AKM_TYPE_NONE in profile.akm
-    }
-    
-    # Check in order of security strength
-    for security, check in security_types.items():
-        try:
-            if check():
-                 return (security)
-        except:
-            continue
-    
-    return "UNKNOWN"
+        
+        # Safely check for each security type without causing errors
+        security_types = {
+            "WPA3-PSK": lambda: hasattr(const, 'AKM_TYPE_WPA3PSK') and const.AKM_TYPE_WPA3PSK in profile.akm,
+            "WPA2-PSK": lambda: hasattr(const, 'AKM_TYPE_WPA2PSK') and const.AKM_TYPE_WPA2PSK in profile.akm,
+            "WPA-PSK": lambda: hasattr(const, 'AKM_TYPE_WPAPSK') and const.AKM_TYPE_WPAPSK in profile.akm,
+            "OPEN": lambda: hasattr(const, 'AKM_TYPE_NONE') and const.AKM_TYPE_NONE in profile.akm
+        }
+        
+        # Check in order of security strength
+        for security, check in security_types.items():
+            try:
+                if check():
+                    return security
+            except:
+                continue
+        
+        return "UNKNOWN"
 
 
     def scan_networks(self) -> Dict[str, dict]:
